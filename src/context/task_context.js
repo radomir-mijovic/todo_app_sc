@@ -4,7 +4,7 @@ import {ADD_NEW_TASK} from "./actions";
 import {v1} from "uuid";
 
 const initialValues = {
-    tasks: JSON.parse(localStorage.getItem('tasks'))
+    tasks: []
 }
 
 const TaskContext = React.createContext()

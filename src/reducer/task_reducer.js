@@ -1,6 +1,7 @@
 import {ADD_NEW_TASK} from "../context/actions";
 
 export const task_reducer = (state, action) => {
+    localStorage.setItem('tasks', JSON.stringify([...state.tasks, action.payload]))
     if (action.type === ADD_NEW_TASK) {
         return {
             ...state,

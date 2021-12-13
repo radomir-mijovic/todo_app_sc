@@ -15,9 +15,9 @@ const InfoBar = () => {
         sortByTitle(sortValue)
     }
 
-    if (tasks.length === 0) {
-        return <H1Styled>Your task list is empty</H1Styled>
-    }
+    // if (tasks.length === 0) {
+    //     return <H1Styled>Your task list is empty</H1Styled>
+    // }
 
     return (
         <InfoBarStyled>
