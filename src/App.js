@@ -1,15 +1,16 @@
 import React from "react";
 import {StyledContainer} from "./styledContainer/StyledContainer";
 import TaskList from "./components/TaskList/TaskList";
-import {AddNewTaskStyled} from "./components/AddNewTask/AddNewTaskStyled";
+import AddNewTask from "./components/AddNewTask/AddNewTask";
 
 function App() {
-  return (
-    <StyledContainer>
-        <AddNewTaskStyled/>
-      <TaskList/>
-    </StyledContainer>
-  );
+
+    return (
+        <StyledContainer>
+            <AddNewTask/>
+            <TaskList/>
+        </StyledContainer>
+    );
 }
 
 export default App;

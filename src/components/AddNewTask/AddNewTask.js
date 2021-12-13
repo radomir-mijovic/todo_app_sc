@@ -1,10 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {AddNewTaskStyled} from "./AddNewTaskStyled";
+import {useTaskContext} from "../../context/task_context";
+
 
 const AddNewTask = () => {
-    return (
-        <div>
+    const {addNewTask} = useTaskContext()
+    const [isTask, setIsTask] = useState('')
 
-        </div>
+    const addNewTaskHandler = (e) => {
+        e.preventDefault()
+        addNewTask(isTask)
+        setIsTask('')
+    }
+
+    return (
+        <>
+            <AddNewTaskStyled
+                type='text'
+                value={isTask}
+                onChange={(e => setIsTask(e.target.value))}
+                required={true}
+                placeholder='Add New Task'/>
+            {isTask &&
+            <button onClick={addNewTaskHandler}>add</button> }
+        </>
     );
 };
 
