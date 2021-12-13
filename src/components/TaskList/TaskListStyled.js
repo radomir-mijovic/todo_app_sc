@@ -5,7 +5,7 @@ export const TaskListStyled = styled.div`
   box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
   background: #FFFF;
   width: 100%;
-  
+
   > ul {
     > li {
       list-style: none;
@@ -15,16 +15,16 @@ export const TaskListStyled = styled.div`
       align-items: center;
       justify-content: space-between;
 
-      
+
       :last-child {
         border-bottom: none;
       }
-      
+
       > div {
         width: 5rem;
         display: flex;
         justify-content: space-between;
-        
+
         > img {
           cursor: pointer;
           height: 1.5rem;
@@ -33,11 +33,10 @@ export const TaskListStyled = styled.div`
       }
     }
   }
-  
 `
 
 export const H2Styled = styled.h2`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   cursor: pointer;
   color: ${props => props.completed ? 'grey' : 'black'};
   text-decoration: ${props => props.completed ? 'line-through' : undefined}

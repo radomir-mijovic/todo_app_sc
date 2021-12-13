@@ -4,7 +4,6 @@ import {useTaskContext} from "../../context/task_context";
 import EditTaskModal from "../EditTaskModal/EditTaskModal";
 import checkIcon from '../../assets/icons/icon-check.svg'
 import deleteIcon from '../../assets/icons/trash-solid.svg'
-import {InfoBarStyled} from "../InfoBar/InfoBarStyled";
 import InfoBar from "../InfoBar/InfoBar";
 
 const TaskList = () => {
@@ -13,8 +12,10 @@ const TaskList = () => {
     const [isTask, setIsTask] = useState({})
 
     const taskHandler = (task) => {
-        const {id, name, description, priority, due_date} = task;
-        console.log(due_date)
+        const {id, name, description, priority, completed, due_date} = task;
+        if (completed) {
+            return
+        }
 
         setIsTask({
             id,
@@ -32,7 +33,7 @@ const TaskList = () => {
             <TaskListStyled>
                 {isModal && <EditTaskModal setIsModal={setIsModal} isTask={isTask}/>}
                 <ul>
-                    {tasks.map((task, index) => {
+                    {tasks && tasks.map((task, index) => {
                         const {completed} = task;
                         return (
                             <li key={index}>
@@ -42,7 +43,7 @@ const TaskList = () => {
                                     {task.name}
                                 </H2Styled>
                                 <div>
-                                    <img src={checkIcon} alt='check-icon' onClick={() => completedTask(task.id)}/>
+                                    {!completed && <img src={checkIcon} alt='check-icon' onClick={() => completedTask(task.id)}/>}
                                     <img src={deleteIcon} alt='trash-icon' onClick={() => deleteTask(task.id)}/>
                                 </div>
                             </li>

@@ -9,6 +9,15 @@ export const EditTaskModalStyled = styled.div`
   background: rgba(0, 0, 0, .4);
   display: grid;
   place-items: center;
+  
+  > img {
+    cursor: pointer;
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    height: 4rem;
+    
+  }
 
   > form {
     height: 50rem;
@@ -32,6 +41,9 @@ export const EditTaskModalStyled = styled.div`
         width: 80%;
         height: 2.5rem;
         outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 1rem;
       }
       
       > textarea {
@@ -39,29 +51,41 @@ export const EditTaskModalStyled = styled.div`
         resize: none;
         height: 6rem;
         outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 1rem;
 
       }
     }
   }
   
   .priority {
-    position: relative;
+    display: flex;
     
     > h2 {
       cursor: pointer;
+      font-size: 1.6rem;
     }
     
     > ul {
-      position: absolute;
       z-index: 3;
       
       > li {
         cursor: pointer;
+        margin: .5rem 0;
       }
     }
   }
   
-  //.date {
-  //  height: 30rem;
-  //}
+  @media (max-width: 600px) {
+    > form {
+      width: 32rem;
+    }
+  }
+`
+
+export const UpdateButton = styled.button`
+  background: #0583D2;
+  padding: 1em;
+  border-radius: 16px;
 `

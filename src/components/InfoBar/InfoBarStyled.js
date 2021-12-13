@@ -8,10 +8,25 @@ export const InfoBarStyled = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   border-radius: 6px;
   
+  .title-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    > img {
+      height: 1rem;
+      margin-left: .5rem;
+    }
+  }
+
   .title {
     cursor: pointer;
   }
+`
+
+export const H1Styled = styled.h1`
+  margin-top: 5rem;
 `

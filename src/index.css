@@ -9,12 +9,7 @@ html {
 }
 
 body {
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Playfair Display', serif;
 }
 
 code {
@@ -24,4 +19,29 @@ code {
 
 li {
   list-style: none;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+input, textarea {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.react-datepicker__input-container input {
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.3rem;
+  }
 }

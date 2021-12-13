@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AddNewTaskStyled} from "./AddNewTaskStyled";
+import {AddButton, AddNewTaskStyled, AddNewTaskWrapper} from "./AddNewTaskStyled";
 import {useTaskContext} from "../../context/task_context";
 
 
@@ -14,16 +14,16 @@ const AddNewTask = () => {
     }
 
     return (
-        <>
+        <AddNewTaskWrapper>
             <AddNewTaskStyled
                 type='text'
                 value={isTask}
                 onChange={(e => setIsTask(e.target.value))}
-                required={true}
+                maxLength={100}
                 placeholder='Add New Task'/>
             {isTask &&
-            <button onClick={addNewTaskHandler}>add</button> }
-        </>
+            <AddButton onClick={addNewTaskHandler}>add</AddButton> }
+        </AddNewTaskWrapper>
     );
 };
 

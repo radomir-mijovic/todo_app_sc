@@ -4,7 +4,7 @@ import {ADD_NEW_TASK} from "./actions";
 import {v1} from "uuid";
 
 const initialValues = {
-    tasks: []
+    tasks: JSON.parse(localStorage.getItem('tasks'))
 }
 
 const TaskContext = React.createContext()
@@ -26,6 +26,7 @@ export const TaskProvider = ({children}) => {
             type: ADD_NEW_TASK,
             payload: newTask
         })
+        localStorage.setItem('tasks', JSON.stringify([...state.tasks, newTask]))
     }
 
     const deleteTask = (id) => {
@@ -53,6 +54,13 @@ export const TaskProvider = ({children}) => {
         })
     }
 
+    const sortByTitle = (sortValue) => {
+        dispatch({
+            type: 'SORT_BY_TITLE',
+            payload: sortValue
+        })
+    }
+
     return (
         <TaskContext.Provider
             value={{
@@ -61,6 +69,7 @@ export const TaskProvider = ({children}) => {
                 deleteTask,
                 completedTask,
                 updateTask,
+                sortByTitle,
             }}>
             {children}
         </TaskContext.Provider>
